@@ -17,14 +17,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: setup-flutter
-      uses: takuyaohashi/setup-flutter@v1
+      uses: subosito/flutter-action@v1.3.2
       with: 
         flutter-version: latest
-    - name: install dependencies
-      uses: steebchen/flutter@v1.0.0
-      with:
-        args: pub get
-    - name: build apk
-      uses: steebchen/flutter@v1.0.0
-      with:
-        args: build apk --release
