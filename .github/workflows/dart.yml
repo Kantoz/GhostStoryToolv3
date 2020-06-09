@@ -16,7 +16,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install dependencies
-      run: flutter pub get
-    - name: Trigger Buildkite Pipeline
-      uses: buildkite/trigger-pipeline-action@v1.2.0
+    - name: install dependencies
+      uses: steebchen/flutter@v1.0.0
+      with:
+        args: pub get
+    - name: build apk
+      uses: steebchen/flutter@v1.0.0
+      with:
+        args: build apk --release
