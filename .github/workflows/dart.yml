@@ -18,6 +18,8 @@ jobs:
         channel: 'dev'
     - run: flutter upgrade        
     - run: flutter pub get
-#    - run: flutter analyze
+    - run: flutter pub upgrade
+    - run: flutter pun run build_runner
+    - run: flutter analyze
     - run:  flutter build apk --split-per-abi
     - run: flutter test --coverage
