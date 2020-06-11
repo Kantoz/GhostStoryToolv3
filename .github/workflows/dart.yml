@@ -8,8 +8,7 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     container:
       image:  google/dart:latest
@@ -19,4 +18,8 @@ jobs:
     - name: setup-flutter
       uses: subosito/flutter-action@v1.3.2
       with: 
-        flutter-version: latest
+        flutter-version: '1.12.14'
+        channel: 'dev'
+    - run: flutter pub get
+    - run: flutter  analyze
+    - run: flutter test --coverage
